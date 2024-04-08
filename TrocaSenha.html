@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>Troca Senha</title>
+    <style>
+        body {
+            background-image: url('/images/Odia.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 50px; /* Tamanho da fonte aumentado */
+            font-family: 'Arial', sans-serif;
+            margin-bottom: 20px;
+        }
+
+        form {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        label {
+            display: inline-block;
+            width: 110px;
+            text-align: right;
+            color: white;
+            font-size: 32px; /* Dobra o tamanho da fonte */
+            font-family: 'Arial', sans-serif;
+            font-weight: bold; /* Mantém a negrito */
+        }
+
+        input[type="text"] {
+            width: 200px;
+            margin-bottom: 10px;
+            border-radius: 20px;
+            border: none;
+            padding: 8px;
+            box-sizing: border-box;
+            font-size: 16px; /* Tamanho da fonte original */
+            font-family: 'Arial', sans-serif;
+        }
+
+        input[type="submit"] {
+            width: 200px;
+            height: 40px;
+            margin-bottom: 10px;
+            background-color: #fdfffd;
+            color: rgb(14, 13, 13);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 16px;
+            font-family: 'Arial', sans-serif;
+            font-weight: bold; /* Mantém o negrito */
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .center-image {
+            display: block;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            align-items: center;
+        }
+
+        .form-group input {
+            margin-right: 10px;
+        }
+
+        .form-group label {
+            font-size: 16px;
+            font-family: 'Arial', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Troca Senha</h1>
+    <div style="text-align: center;">
+        <form action="/AlterarSenha.php" method="post">
+            <div class="form-group">
+                <label for="user">Usuário:</label>
+                <input id="user" name="textbox1" placeholder="Digite o seu Usuário" type="text">
+            </div>
+            <br>
+
+            <div class="form-group">
+                <label for="CPF">CPF:</label>
+                <input id="CPF" name="textbox2" placeholder="Digite o seu CPF" type="text" oninput="validateNumberInput(this)">
+            </div>
+
+            <div style="text-align: center; margin-top: 20px;">
+                <input name="submit_button" type="submit" value="OK">
+            </div>
+        </form>
+        <div id="mensagem" style="text-align: center; color: white;"></div>
+
+        <script>
+            function validateNumberInput(input) {
+                input.value = input.value.replace(/\D/g, '');
+            }
+        </script>
+    </div>
+</body>
+
+</html>
